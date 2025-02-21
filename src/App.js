@@ -1,33 +1,30 @@
 import React from 'react';
-import Nav from './components/Nav';
-import './App.css';
-import Footer from './components/Footer';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage';
-import DetailPage from './pages/DetailPage';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
-import { Test } from './components/test';
+import MovieDetail from './pages/MovieDetail';
+import Header from './components/Header';
 
-const Layout = () => {
-  return (
-    <div>
-      <Nav />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
 export default function App() {
   return (
-    <div className='app'>
-      {/* <Test /> */}
+    <div>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<MainPage />} />
-          <Route path=':movieId' element={<DetailPage />} />
-          <Route path='search' element={<SearchPage />} />
+          <Route index element={<Home />} />
+          <Route path='/search' element={<SearchPage />} />
+          <Route path='/:movieId' element={<MovieDetail />} />
         </Route>
       </Routes>
+    </div>
+  );
+}
+function Layout() {
+  return (
+    <div className='bg-blue-200'>
+      <Header />
+      <div className='pt-[50px]'>
+        <Outlet />
+      </div>
     </div>
   );
 }
