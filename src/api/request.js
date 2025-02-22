@@ -1,4 +1,5 @@
 const requests = {
+  fetchImg: 'https://image.tmdb.org/t/p/original/',
   fetchNowPlaying: 'movie/now_playing',
   fetchNetflixOriginals: '/discover/tv?with_networks=213',
   fetchTrending: '/trending/all/week',

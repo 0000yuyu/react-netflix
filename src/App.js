@@ -20,9 +20,9 @@ export default function App() {
 }
 function Layout() {
   return (
-    <div className='bg-blue-200'>
+    <div className='bg-black'>
       <Header />
-      <div className='pt-[50px]'>
+      <div className=''>
         <Outlet />
       </div>
     </div>
