@@ -21,9 +21,10 @@ export default function Header() {
   }
   return (
     <div
-      className={`fixed p-[10px] w-full h-[50px] flex justify-between ${
-        show && 'bg-black' //Q. 트랜지션 어떻게 천천히 하는지 의문!!
-      }`}
+      className={`z-[1000] fixed px-[40px] p-[30px]
+         w-full h-[90px] flex justify-between pr-5 ${
+           show && 'bg-black' //Q. 트랜지션 어떻게 천천히 하는지 의문!!
+         }`}
     >
       <img
         src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1198px-Netflix_2015_logo.svg.png'
@@ -31,7 +32,7 @@ export default function Header() {
         onClick={() => navigate('/')}
       ></img>
       <input
-        className='bg-white opacity-[0.4] p-2 rounded'
+        className='bg-black bg-opacity-55 text-white p-2 rounded'
         type='text'
         placeholder='영화를 검색해주세요'
         value={searchValue}
